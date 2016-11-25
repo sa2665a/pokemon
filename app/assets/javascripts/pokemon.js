@@ -24,11 +24,7 @@ PokemonApp.Pokemon.prototype.render = function () {
 					var imgFile = PokemonApp.idForumUri(imgUri,-1);
 					var imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + imgFile
 
-					$(".js-pkmn-image").attr("src", imgUrl);
-
-
-				
-
+					$(".js-pkmn-image").attr("src", imgUrl);		
 					$(".js-pkmn-name").text(response.name);
 					$(".js-pkmn-number").text(response.pkdx_id);
 					$(".js-pkmn-height").text(response.height);
@@ -41,19 +37,17 @@ PokemonApp.Pokemon.prototype.render = function () {
 					$(".js-pkmn-speed").text(response.speed);
 					
 					
-					// 	var types = "";
-					// 	var arrayTypes = response.types;
-					// 	arrayTypes.forEach(function(type){
-					// 		types += type.name + " ";
-					// 	})
+						var types = "";
+						var arrayTypes = response.types;
+						arrayTypes.forEach(function(type){
+							types += type.name + " ";
+						})
 
+				  $(".js-pkmn-type").text(types);
 
-					// $(".js-pkmn-type").text(types);
-
-					$(".js-pokemon-modal").modal("show");
-						
+					$(".js-pokemon-modal").modal("show");		
 			
-							}
+				}
 			});
 			
 		}
